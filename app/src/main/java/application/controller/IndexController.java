@@ -14,4 +14,15 @@ public class IndexController {
         model.addAttribute("nome", pNome);
         return "home";
     }
+
+    @RequestMapping("/soma")
+    public String soma() {
+        return "form-soma";
+    }
+
+    public String soma(Model model, @RequestParam("numA") int numA, @RequestParam("numB") int numB) {
+        int resultado = numA + numB;
+        model.addAttribute("resultado", resultado);
+        return "resultado-soma";
+    }
 }
